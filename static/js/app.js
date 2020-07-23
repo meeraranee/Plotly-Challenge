@@ -103,14 +103,14 @@ function init() {
     
         var samp = data.names[0];
         buildCharts(samp);
-        buildMetadata(samp);
+        buildInformation(samp);
     });
 };
 
 // Change event function
 function optionChanged(change) {
     buildCharts(change),
-    buildMetadata(change)
+    buildInformation(change)
 };
 
 // Initialize
