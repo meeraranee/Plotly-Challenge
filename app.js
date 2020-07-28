@@ -9,7 +9,7 @@ function buildPlot(id) {
         console.log(samples);
 
         // Select top 10
-        var sample_values = samples.sample_values.filter.slice(0, 10).reverse();
+        var sample_values = samples.sample_values.slice(0, 10).reverse();
         console.log(sample_values);
 
         var otu_ids = samples.otu_ids.slice(0, 10).reverse().map(d => "OTU" + d);
@@ -102,15 +102,15 @@ function init() {
         });
     
         var samp = data.names[0];
-        buildCharts(samp);
-        buildInformation(samp);
+        buildPlot(samp);
+        showMetadata(samp);
     });
 };
 
 // Change event function
 function optionChanged(change) {
-    buildCharts(change),
-    buildInformation(change)
+    buildPlot(change),
+    showMetadata(change)
 };
 
 // Initialize
